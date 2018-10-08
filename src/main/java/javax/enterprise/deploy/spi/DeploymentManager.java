@@ -192,7 +192,7 @@ public interface DeploymentManager {
      *
      * @param targetList   A list of server targets the user is specifying
      *                     this application be deployed to.
-     * @param moduleType   The module type of this application archive.
+     * @param type   The module type of this application archive.
      * @param moduleArchive The input stream containing the application
      *                      archive to be disrtibuted.
      * @param deploymentPlan The input stream containing the deployment
