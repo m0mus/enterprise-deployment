@@ -102,8 +102,8 @@ public interface DeployableObject
 	*
 	* 	The format of the DOCTYPE statement is:
 	*<ul>
-	*	&lt!DOCTYPE root_element PUBLIC 
-	*	"-//organization//label//language" "location"&gt
+	*	&lt;!DOCTYPE root_element PUBLIC 
+	*	"-//organization//label//language" "location"&gt;
 	*</ul>
 	*
 	* root_element - is the name of the root document in the DTD.
@@ -118,9 +118,9 @@ public interface DeployableObject
 	*
 	* An example Java EE deployment descriptor DOCTYPE statement is:
 	*<ul>
-	*   &lt!DOCTYPE application-client PUBLIC
+	*   &lt;!DOCTYPE application-client PUBLIC
     *   "-//Sun Microsystems, Inc.//DTD J2EE Application Client 1.3//EN"
-    *   "http://java.sun.com/dtd/application-client_1_3.dtd"&gt
+    *   "http://java.sun.com/dtd/application-client_1_3.dtd"&gt;
 	*</ul>
 	* In this example the label is, "DTD J2EE Application Client 1.3", 
 	* and the DTD version number is 1.3. A call to getModuleDTDVersion 
