@@ -33,8 +33,15 @@ SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
 The project maintains the following source code repositories:
 
 * https://github.com/eclipse-ee4j/enterprise-deployment
+* https://github.com/eclipse-ee4j/jaxr-api
+* https://github.com/eclipse-ee4j/jax-rpc-api
+* https://github.com/eclipse-ee4j/management-api
 
 ## Third-party Content
+
+This project leverages the following third party content.
+
+None
 
 ## Cryptography
 
@@ -44,5 +51,3 @@ another country, of encryption software. BEFORE using any encryption software,
 please check the country's laws, regulations and policies concerning the import,
 possession, or use, and re-export of encryption software, to see if this is
 permitted.
-
-
