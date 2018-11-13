@@ -27,7 +27,7 @@
 
     <groupId>jakarta.enterprise.deploy</groupId>
     <artifactId>jakarta.enterprise.deploy-api</artifactId>
-    <version>1.7.1-SNAPSHOT</version>
+    <version>1.7.1</version>
     
     <properties>
         <extension.name>javax.enterprise.deploy</extension.name>
