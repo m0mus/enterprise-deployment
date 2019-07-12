@@ -23,6 +23,7 @@
         <version>1.7.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <groupId>jakarta.enterprise.deploy</groupId>
     <artifactId>deployment-spec</artifactId>
     <packaging>pom</packaging>
     <name>Jakarta Deployment Specification</name>
