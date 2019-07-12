@@ -4,7 +4,7 @@
 
 = Jakarta Deployment 1.7
 :authors: Jakarta Deployment Team, https://projects.eclipse.org/projects/ee4j.jakartaee-stable
-:email: https://dev.eclipse.org/mailman/listinfo/{shortName}-dev
+:email: https://dev.eclipse.org/mailman/listinfo/jakartaee-stable-dev
 :version-label!:
 :doctype: book
 :license: Eclipse Foundation Specification License v1.0
