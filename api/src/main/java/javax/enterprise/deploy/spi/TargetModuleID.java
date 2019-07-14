@@ -27,7 +27,7 @@ package javax.enterprise.deploy.spi;
  * has no parent.  It represents a deployed EAR 
  * file or stand alone module.  A child module
  * TargetModuleID represents a deployed sub module
- * of a Java EE application. 
+ * of a Jakarta EE application.
  *
  * A child TargetModuleID has only one parent,
  * the super module it was bundled and deployed

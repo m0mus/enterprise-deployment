@@ -21,12 +21,12 @@ import javax.enterprise.deploy.spi.exceptions.DeploymentManagerCreationException
 
 /**
  * The DeploymentFactory interface is a deployment driver for a    
- * Java EE plaform product.  It returns a DeploymentManager object
- * which represents a connection to a specific Java EE platform
+ * Jakarta EE plaform product.  It returns a DeploymentManager object
+ * which represents a connection to a specific Jakarta EE platform
  * product.
  *
  * <p> Each application server vendor must provide an implementation 
- *  of this class in order for the Java EE Deployment API to work 
+ *  of this class in order for the Jakarta Deployment to work
  *  with their product.
  *
  * <p> The class implementing this interface should have a public
@@ -37,7 +37,7 @@ import javax.enterprise.deploy.spi.exceptions.DeploymentManagerCreationException
  *
  * <p> A <tt>connected</tt> or <tt>disconnected</tt> DeploymentManager 
  * can be requested.  A DeploymentManager that runs connected to the 
- * platform can provide access to Java EE resources. A DeploymentManager 
+ * platform can provide access to Jakarta EE resources. A DeploymentManager
  * that runs disconnected only provides module deployment configuration 
  * support. 
  *

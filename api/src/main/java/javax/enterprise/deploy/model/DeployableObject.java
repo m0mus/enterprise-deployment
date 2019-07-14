@@ -23,7 +23,7 @@ import java.io.IOException;
 
 /**
  * The DeployableObject interface is an abstract representation 
- * of a Java EE deployable module (JAR, WAR, RAR, EAR). A 
+ * of a Jakarta EE deployable module (JAR, WAR, RAR, EAR). A
  * DeployableObject provides access to the module's deployment
  * descriptor and class files.
  *

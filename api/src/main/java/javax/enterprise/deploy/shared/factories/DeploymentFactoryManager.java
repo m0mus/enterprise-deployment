@@ -31,7 +31,7 @@ import javax.enterprise.deploy.spi.factories.DeploymentFactory;
 
 /**
  * The DeploymentFactoryManager class is a central registry for
- * Java EE DeploymentFactory objects.  The DeploymentFactoryManager
+ * Jakarta EE DeploymentFactory objects.  The DeploymentFactoryManager
  * retains references to DeploymentFactory objects loaded by
  * a tool.  A DeploymentFactory object provides a reference to 
  * a DeploymentManager.
@@ -48,7 +48,7 @@ import javax.enterprise.deploy.spi.factories.DeploymentFactory;
  * connected DeploymentManager is getDeploymentManager. This method
  * provides parameters for user name and password that the  product 
  * may require for user authentication.  A disconnected DeploymentManager
- * does not provide access to a running Java EE product. The method
+ * does not provide access to a running Jakarta EE product. The method
  * to retrieve a disconnected DeploymentManager is 
  * getDisconnectedDeploymentManager.  A disconnected DeploymentManager
  * does not need user authentication information.
