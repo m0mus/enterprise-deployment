@@ -31,7 +31,7 @@ import java.io.OutputStream;
 /**
  * An interface that defines a container for all the 
  * server-specific configuration information for a 
- * single top-level Java EE module.  The DeploymentConfiguration 
+ * single top-level Jakarta EE module.  The DeploymentConfiguration
  * object could represent a single stand alone module or an 
  * EAR file that contains several sub-modules.
  *

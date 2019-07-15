@@ -19,7 +19,7 @@ package javax.enterprise.deploy.model;
 /**
  * An interface for beans that represent a fragment of a 
  * standard deployment descriptor.  A link is provided to 
- * the Java EE application that includes this bean.
+ * the Jakarta EE application that includes this bean.
  */
 public interface DDBean 
 {

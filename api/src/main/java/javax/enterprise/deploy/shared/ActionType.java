@@ -17,7 +17,7 @@
 package javax.enterprise.deploy.shared;
 
 /**
- * Class ActionTypes defines enumeration values for the Java EE
+ * Class ActionTypes defines enumeration values for the Jakarta EE
  * DeploymentStatus actions.
  *
  * @author  rsearls

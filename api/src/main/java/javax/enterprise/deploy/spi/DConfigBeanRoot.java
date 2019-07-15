@@ -19,7 +19,7 @@ package javax.enterprise.deploy.spi;
 import javax.enterprise.deploy.model.DDBeanRoot;
 
 /**
- * A Java EE component module consists of one or more deployment 
+ * A Jakarta EE component module consists of one or more deployment
  * descriptor files and zero or more non-deployment descriptor 
  * XML instance documents.  A module must contain a component-specific 
  * deployment descriptor file (see the component specification for 
