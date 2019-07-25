@@ -25,6 +25,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>jakarta.enterprise.deploy</groupId>
     <artifactId>deployment-spec</artifactId>
+    <version>1.7-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Jakarta Deployment Specification</name>
 
@@ -57,8 +58,8 @@
                         <configuration>
                             <rules>
                                 <requireJavaVersion>
-                                    <version>[1.8.0,1.9.0)</version>
-                                    <message>You need JDK8 or lower</message>
+                                    <version>[1.8,)</version>
+                                    <message>You need JDK 8 or newer</message>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
