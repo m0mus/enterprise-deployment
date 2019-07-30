@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -18,13 +18,13 @@ package javax.enterprise.deploy.spi;
 
 /**
  * A TargetModuleID interface represents a unique
- * identifier for a deployed application module. 
- * A deployable application module can be an EAR, 
- * JAR, WAR or RAR file.  
+ * identifier for a deployed application module.
+ * A deployable application module can be an EAR,
+ * JAR, WAR or RAR file.
  *
- * A TargetModuleID can represent a root module or 
- * a child module.  A root module TargetModuleID 
- * has no parent.  It represents a deployed EAR 
+ * A TargetModuleID can represent a root module or
+ * a child module.  A root module TargetModuleID
+ * has no parent.  It represents a deployed EAR
  * file or stand alone module.  A child module
  * TargetModuleID represents a deployed sub module
  * of a Jakarta EE application.
@@ -35,7 +35,7 @@ package javax.enterprise.deploy.spi;
  *
  * The identifier consists of the target name
  * and the unique identifier for the deployed
- * application module. 
+ * application module.
  */
 public interface TargetModuleID
 {
@@ -51,6 +51,8 @@ public interface TargetModuleID
    /**
     * Retrieve the id assigned to represent
     * the deployed module.
+    *
+    * @return the id assigned to represent the deployed module
     */
    public String getModuleID();
 
@@ -58,7 +60,7 @@ public interface TargetModuleID
    /**
     * If this TargetModulID represents a web
     * module retrieve the URL for it.
-    * 
+    *
     * @return the URL of a web module or null
     *         if the module is not a web module.
     */
@@ -74,8 +76,8 @@ public interface TargetModuleID
     * Retrieve the identifier of the parent
     * object of this deployed module. If there
     * is no parent then this is the root object
-    * deployed.  The root could represent an EAR 
-    * file or it could be a stand alone module 
+    * deployed.  The root could represent an EAR
+    * file or it could be a stand alone module
     * that was deployed.
     *
     * @return the TargetModuleID of the parent
@@ -89,7 +91,7 @@ public interface TargetModuleID
     * Retrieve a list of identifiers of the children
     * of this deployed module.
     *
-    * @return a list of TargetModuleIDs identifying the 
+    * @return a list of TargetModuleIDs identifying the
     *         childern of this object. A <code>null</code>
     *         value means this module has no childern
     */

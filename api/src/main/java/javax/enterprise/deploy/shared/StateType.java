@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -17,12 +17,12 @@
 package javax.enterprise.deploy.shared;
 
 /**
- * Class StateTypes defines enumeration values for the 
+ * Class StateTypes defines enumeration values for the
  * DeploymentStatus object.
  *
  * @author  rsearls
  */
-public class StateType 
+public class StateType
 {
 	private int value; // This enumeration value's int value
 
@@ -57,13 +57,13 @@ public class StateType
 	FAILED,
     RELEASED,
 	};
-    
+
     /**
      * Construct a new enumeration value with the given integer value.
      *
      * @param  value  Integer value.
      */
-    protected StateType(int value) 
+    protected StateType(int value)
     {   this.value = value;
     }
 
@@ -74,9 +74,11 @@ public class StateType
     public int getValue()
     {   return value;
     }
-       
+
 	/**
-	 * Returns the string table for class StateType
+	 * Returns the string table for class StateType.
+	 *
+	 * @return the string table for class StateType.
 	 */
 	protected String[] getStringTable()
 	{
@@ -84,7 +86,9 @@ public class StateType
 	}
 
 	/**
-	 * Returns the enumeration value table for class StateType
+	 * Returns the enumeration value table for class StateType.
+	 *
+	 * @return the enumeration value table for class StateType.
 	 */
 	protected StateType[] getEnumValueTable()
 	{
@@ -93,7 +97,9 @@ public class StateType
 
     /**
      * Return an object of the specified value.
+	 *
      * @param value a designator for the object.
+	 * @return an object of the specified value.
      */
     public static StateType getStateType(int value)
     {   return enumValueTable[value];

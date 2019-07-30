@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -20,12 +20,12 @@ import javax.enterprise.deploy.spi.DeploymentManager;
 import javax.enterprise.deploy.spi.exceptions.DeploymentManagerCreationException;
 
 /**
- * The DeploymentFactory interface is a deployment driver for a    
+ * The DeploymentFactory interface is a deployment driver for a
  * Jakarta EE plaform product.  It returns a DeploymentManager object
  * which represents a connection to a specific Jakarta EE platform
  * product.
  *
- * <p> Each application server vendor must provide an implementation 
+ * <p> Each application server vendor must provide an implementation
  *  of this class in order for the Jakarta Deployment to work
  *  with their product.
  *
@@ -35,52 +35,52 @@ import javax.enterprise.deploy.spi.exceptions.DeploymentManagerCreationException
  * not required that the class have a static initializer that registers
  * an instance of the class with the DeploymentFactoryManager class.
  *
- * <p> A <tt>connected</tt> or <tt>disconnected</tt> DeploymentManager 
- * can be requested.  A DeploymentManager that runs connected to the 
+ * <p> A connected or disconnected DeploymentManager
+ * can be requested.  A DeploymentManager that runs connected to the
  * platform can provide access to Jakarta EE resources. A DeploymentManager
- * that runs disconnected only provides module deployment configuration 
- * support. 
+ * that runs disconnected only provides module deployment configuration
+ * support.
  *
  * @see javax.enterprise.deploy.shared.factories.DeploymentFactoryManager
  */
-public interface DeploymentFactory 
+public interface DeploymentFactory
 {
     /**
      * Tests whether this factory can create a DeploymentManager
      * object based on the specificed URI.  This does not indicate
      * whether such an attempt will be successful, only whether the
-     * factory can handle the uri. 
+     * factory can handle the uri.
      * @param uri The uri to check
-     * @return <tt>true</tt> if the factory can handle the uri.
+     * @return true if the factory can handle the uri.
      */
     public boolean handlesURI(String uri);
 
     /**
-     * Return a <tt>connected</tt> DeploymentManager instance.
+     * Return a connected DeploymentManager instance.
      *
      * @param uri The URI that specifies the connection parameters
-     * @param username An optional username (may be <tt>null</tt> if
+     * @param username An optional username (may be null if
      *        no authentication is required for this platform).
-     * @param password An optional password (may be <tt>null</yy> if
+     * @param password An optional password (may be null if
      *        no authentication is required for this platform).
      * @return A ready DeploymentManager instance.
-     * @throws DeploymentManagerCreationException  occurs when a 
-     *        DeploymentManager could not be returned (server down, 
+     * @throws DeploymentManagerCreationException  occurs when a
+     *        DeploymentManager could not be returned (server down,
      *        unable to authenticate, etc).
      */
-    public DeploymentManager getDeploymentManager(String uri, 
-            String username, String password) 
+    public DeploymentManager getDeploymentManager(String uri,
+            String username, String password)
             throws DeploymentManagerCreationException;
 
     /**
-     * Return a <tt>disconnected</tt> DeploymentManager instance. 
+     * Return a disconnected DeploymentManager instance.
      *
      * @param uri the uri of the DeploymentManager to return.
-     * @return A DeploymentManager <tt>disconnected</tt> instance.
-     * @throws DeploymentManagerCreationException occurs if the 
+     * @return A DeploymentManager disconnected instance.
+     * @throws DeploymentManagerCreationException occurs if the
      *         DeploymentManager could not be created.
      */
-    public DeploymentManager getDisconnectedDeploymentManager(String uri) 
+    public DeploymentManager getDisconnectedDeploymentManager(String uri)
             throws DeploymentManagerCreationException;
 
     /**
@@ -90,7 +90,7 @@ public interface DeploymentFactory
     public String getDisplayName();
 
     /**
-     * Provide a string identifying version of this vendor's 
+     * Provide a string identifying version of this vendor's
      * DeploymentManager.
      * @return the name of the vendor's DeploymentManager.
      */

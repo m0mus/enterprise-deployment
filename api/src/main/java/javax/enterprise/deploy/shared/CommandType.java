@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -17,7 +17,7 @@
 package javax.enterprise.deploy.shared;
 
 /**
- * Class CommandTypes defines enumeration values for the 
+ * Class CommandTypes defines enumeration values for the
  * DeploymentStatus object.
  *
  * @author  rsearls
@@ -64,17 +64,17 @@ public class CommandType
 	UNDEPLOY,
 	REDEPLOY,
 	};
-    
+
     /**
      * Construct a new enumeration value with the given integer value.
      *
      * @param  value  Integer value.
      */
-    protected CommandType(int value) 
+    protected CommandType(int value)
     {
 		this.value = value;
     }
-       
+
     /**
      * Returns this enumeration value's integer value.
      * @return the value
@@ -84,7 +84,9 @@ public class CommandType
     }
 
 	/**
-	 * Returns the string table for class CommandType
+	 * Returns the string table for class CommandType.
+	 *
+	 * @return the string table for class CommandType.
 	 */
 	protected String[] getStringTable()
 	{
@@ -92,7 +94,9 @@ public class CommandType
 	}
 
 	/**
-	 * Returns the enumeration value table for class CommandType
+	 * Returns the enumeration value table for class CommandType.
+	 *
+	 * @return the enumeration value table for class CommandType.
 	 */
 	protected CommandType[] getEnumValueTable()
 	{
@@ -101,7 +105,9 @@ public class CommandType
 
     /**
      * Return an object of the specified value.
+	 *
      * @param value a designator for the object.
+	 * @return an object of the specified value.
      */
     public static CommandType getCommandType(int value)
     {   return enumValueTable[value];
