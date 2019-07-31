@@ -2,7 +2,7 @@
 // Copyright (c) 2017, 2019 Contributors to the Eclipse Foundation
 //
 
-= Jakarta Deployment 1.7
+= Jakarta Deployment
 :authors: Jakarta Deployment Team, https://projects.eclipse.org/projects/ee4j.jakartaee-stable
 :email: https://dev.eclipse.org/mailman/listinfo/jakartaee-stable-dev
 :version-label!:
