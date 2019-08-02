@@ -15,6 +15,10 @@ Run the full build:
 
 `mvn install`
 
+Generate specification with given status:
+
+`mvn clean install -Dstatus="Final Release"`
+
 Locate the html files:
 - `target/generated-docs/deployment-spec-<version>.html`
 
