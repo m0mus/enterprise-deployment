@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -21,19 +21,23 @@ package javax.enterprise.deploy.spi;
  * A Target interface represents a single logical
  * core server of one instance of a Jakarta EE platform
  * product.  It is a designator for a server and
- * the implied location to copy a configured 
+ * the implied location to copy a configured
  * application for the server to access.
  */
 public interface Target
 {
    /**
     * Retrieve the name of the target server.
+    *
+    * @return the name
     */
    public String getName();
 
    /**
     * Retrieve other descriptive information
     * about the target.
+    *
+    * @return the description
     */
    public String getDescription();
 }

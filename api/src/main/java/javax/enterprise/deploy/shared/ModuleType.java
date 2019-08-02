@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -22,7 +22,7 @@ package javax.enterprise.deploy.shared;
  *
  * @author Rebecca Searls
  */
-public class ModuleType 
+public class ModuleType
 {
 	private int value; // This enumeration value's int value
 
@@ -74,7 +74,7 @@ public class ModuleType
 	".rar",
 	".war",
     };
-        
+
 
     /**
      * Construct a new enumeration value with the given integer value.
@@ -84,25 +84,29 @@ public class ModuleType
     protected ModuleType(int value)
     {   this.value = value;
     }
-        
+
     /**
      * Returns this enumeration value's integer value.
      * @return the value
      */
-    public int getValue() 
+    public int getValue()
 	{ 	return value;
     }
 
-        
+
 	/**
-	 * Returns the string table for class ModuleType
+	 * Returns the string table for class ModuleType.
+	 *
+	 * @return the string table for class ModuleType.
 	 */
 	protected String[] getStringTable()
 	{   return stringTable;
 	}
 
 	/**
-	 * Returns the enumeration value table for class ModuleType
+	 * Returns the enumeration value table for class ModuleType.
+	 *
+	 * @return the enumeration value table for class ModuleType.
 	 */
 	protected ModuleType[] getEnumValueTable()
 	{   return enumValueTable;
@@ -110,14 +114,18 @@ public class ModuleType
 
 	/**
      * Return the file extension string for this enumeration.
+	 *
+	 * @return the file extension string for this enumeration.
      */
     public String getModuleExtension()
     {   return (moduleExtension[getValue()]);
     }
-    
+
 	/**
      * Return an object of the specified value.
+	 *
      * @param value a designator for the object.
+	 * @return an object of the specified value.
      */
     public static ModuleType getModuleType(int value)
     {   return enumValueTable[value];
@@ -127,7 +135,7 @@ public class ModuleType
 	 * Return the string name of this ModuleType or the
 	 * integer value if outside the bounds of the table
 	 */
-    public String toString() 
+    public String toString()
 	{
     	String[] strTable = getStringTable();
     	int index = value - getOffset();
@@ -147,7 +155,7 @@ public class ModuleType
      * 0, override this method in the subclass.
      * @return the offset of the lowest enumeration value.
      */
-    protected int getOffset() 
+    protected int getOffset()
 	{ 	return 0;
     }
-} 
+}

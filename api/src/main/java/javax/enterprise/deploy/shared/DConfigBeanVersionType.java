@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -22,21 +22,21 @@ package javax.enterprise.deploy.shared;
  *
  * @author  rsearls
  */
-public class DConfigBeanVersionType 
+public class DConfigBeanVersionType
 {
 	private int value; // This enumeration value's int value
 
 	/**
      * J2EE Platform version 1.3
 	 */
-    public static final DConfigBeanVersionType V1_3 = 
+    public static final DConfigBeanVersionType V1_3 =
 		new DConfigBeanVersionType(0);
 
 	/**
      * J2EE Platform version 1.3.1
      * THIS CONSTANT SHOULD NEVER BE USED.  Use V1_3 instead.
 	 */
-    public static final DConfigBeanVersionType V1_3_1 = 
+    public static final DConfigBeanVersionType V1_3_1 =
 		new DConfigBeanVersionType(1);
 
     /**
@@ -71,7 +71,7 @@ public class DConfigBeanVersionType
      *
      * @param  value  Integer value.
      */
-    protected DConfigBeanVersionType(int value) 
+    protected DConfigBeanVersionType(int value)
     {   this.value = value;
     }
 
@@ -83,9 +83,11 @@ public class DConfigBeanVersionType
     {   return value;
     }
 
-       
+
 	/**
-	 * Returns the string table for class DConfigBeanVersionType
+	 * Returns the string table for class DConfigBeanVersionType.
+	 *
+	 * @return the string table for class DConfigBeanVersionType.
 	 */
 	protected String[] getStringTable()
 	{
@@ -93,7 +95,9 @@ public class DConfigBeanVersionType
 	}
 
 	/**
-	 * Returns the enumeration value table for class DConfigBeanVersionType
+	 * Returns the enumeration value table for class DConfigBeanVersionType.
+	 *
+	 * @return the enumeration value table for class DConfigBeanVersionType.
 	 */
 	protected DConfigBeanVersionType[] getEnumValueTable()
 	{
@@ -102,7 +106,9 @@ public class DConfigBeanVersionType
 
     /**
      * Return an object of the specified value.
+	 *
      * @param value a designator for the object.
+	 * @return an object of the specified value.
      */
     public static DConfigBeanVersionType getDConfigBeanVersionType(int value)
     {   return enumValueTable[value];

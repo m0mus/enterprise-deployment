@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (c) 2012, 2018 Oracle and/or its affiliates. All rights reserved.
+    Copyright (c) 2012, 2019 Oracle and/or its affiliates. All rights reserved.
 
     This program and the accompanying materials are made available under the
     terms of the Eclipse Public License v. 2.0, which is available at
@@ -27,7 +27,8 @@
 
     <groupId>jakarta.enterprise.deploy</groupId>
     <artifactId>jakarta.enterprise.deploy-api</artifactId>
-    <version>1.7.1-SNAPSHOT</version>
+    <version>1.7.3-SNAPSHOT</version>
+    <inceptionYear>2002</inceptionYear>
 
     <properties>
         <extension.name>javax.enterprise.deploy</extension.name>
@@ -193,9 +194,27 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.8</version>
+                <version>3.1.0</version>
                 <configuration>
+                    <source>8</source>
                     <additionalparam>-Xdoclint:none</additionalparam>
+                    <doctitle>Jakarta Deployment ${project.version} API</doctitle>
+                    <sourceFileExcludes>
+                        <sourceFileExclude>**/module-info.java</sourceFileExclude>
+                        <sourceFileExclude>target/**/*.java</sourceFileExclude>
+                    </sourceFileExcludes>
+                    <docfilessubdirs>true</docfilessubdirs>
+                    <links>
+                        <link>http://docs.oracle.com/javase/8/docs/api/</link>
+                    </links>
+                    <detectJavaApiLink>false</detectJavaApiLink>
+                    <detectOfflineLinks>false</detectOfflineLinks>
+                    <header><![CDATA[<br>Jakarta Deployment API v${project.version}]]>
+                    </header>
+                    <bottom><![CDATA[
+                    Copyright &#169; {inceptionYear}&#x2013;{currentYear} Oracle and/or its affiliates. All rights reserved.<br>
+                    Use is subject to <a href="{@docRoot}/doc-files/EFSL.html" target="_top">license terms</a>.]]>
+                    </bottom>
                 </configuration>
                 <executions>
                     <execution>

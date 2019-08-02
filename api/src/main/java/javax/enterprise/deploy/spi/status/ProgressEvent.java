@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -23,7 +23,7 @@ import java.util.EventObject;
  * An event which indicates that a deployment
  * status change has occurred.
  *
- * @see ProgressListener 
+ * @see ProgressListener
  * @see ProgressObject
  */
 public class ProgressEvent extends EventObject
@@ -36,7 +36,8 @@ public class ProgressEvent extends EventObject
     * progress event.
     *
     * @param source the object on which the Event initially occurred.
-    * @param sCode  the object containing the status 
+    * @param targetModuleID target module ID
+    * @param sCode  the object containing the status
     *               information.
     */
    public ProgressEvent (Object source, TargetModuleID targetModuleID,
@@ -51,7 +52,7 @@ public class ProgressEvent extends EventObject
     * Retrieve the TargetModuleID for this event
     *
     * @return the object containing the TargetModuleID
-    */ 
+    */
    public TargetModuleID getTargetModuleID()
    {
      return targetModuleID;

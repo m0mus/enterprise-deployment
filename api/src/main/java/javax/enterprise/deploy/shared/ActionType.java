@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -22,7 +22,7 @@ package javax.enterprise.deploy.shared;
  *
  * @author  rsearls
  */
-public class ActionType 
+public class ActionType
 {
 	private int value; // This enumeration value's int value
 
@@ -31,12 +31,12 @@ public class ActionType
 	 */
     public static final ActionType EXECUTE = new ActionType(0);
 	/**
-     * A cancel operation is being preformed on the DeploymentManager 
+     * A cancel operation is being preformed on the DeploymentManager
      * action command.
 	 */
     public static final ActionType CANCEL = new ActionType(1);
 	/**
-     * A stop operation is being preformed on the DeploymentManager 
+     * A stop operation is being preformed on the DeploymentManager
      * action command.
 	 */
     public static final ActionType STOP = new ActionType(2);
@@ -60,7 +60,7 @@ public class ActionType
      *
      * @param  value  Integer value.
      */
-    protected ActionType(int value) 
+    protected ActionType(int value)
     {   this.value = value;
     }
 
@@ -72,9 +72,11 @@ public class ActionType
     {   return value;
     }
 
-       
+
 	/**
-	 * Returns the string table for class ActionType
+	 * Returns the string table for class ActionType.
+	 *
+	 * @return the string table for class ActionType.
 	 */
 	protected String[] getStringTable()
 	{
@@ -83,6 +85,8 @@ public class ActionType
 
 	/**
 	 * Returns the enumeration value table for class ActionType
+	 *
+	 * @return the enumeration value table for class ActionType.
 	 */
 	protected ActionType[] getEnumValueTable()
 	{
@@ -91,7 +95,9 @@ public class ActionType
 
     /**
      * Return an object of the specified value.
+	 *
      * @param value a designator for the object.
+	 * @return an object of the specified value.
      */
     public static ActionType getActionType(int value)
     {   return enumValueTable[value];

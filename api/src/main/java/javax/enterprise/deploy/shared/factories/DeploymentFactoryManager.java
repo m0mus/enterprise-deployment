@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -33,33 +33,33 @@ import javax.enterprise.deploy.spi.factories.DeploymentFactory;
  * The DeploymentFactoryManager class is a central registry for
  * Jakarta EE DeploymentFactory objects.  The DeploymentFactoryManager
  * retains references to DeploymentFactory objects loaded by
- * a tool.  A DeploymentFactory object provides a reference to 
+ * a tool.  A DeploymentFactory object provides a reference to
  * a DeploymentManager.
  *
  * The DeploymentFactoryManager has been implemented as a singleton.
- * A tool gets a reference to the DeploymentFactoryManager via the 
+ * A tool gets a reference to the DeploymentFactoryManager via the
  * getInstance method.
  *
- * The DeploymentFactoryManager can return two types of 
- * DeploymentManagers, a connected DeploymentManager and a 
+ * The DeploymentFactoryManager can return two types of
+ * DeploymentManagers, a connected DeploymentManager and a
  * disconnected DeploymentManager.  The connected DeploymentManager
  * provides access to any product resources that may be required
  * for configurations and deployment.  The method to retrieve a
  * connected DeploymentManager is getDeploymentManager. This method
- * provides parameters for user name and password that the  product 
+ * provides parameters for user name and password that the  product
  * may require for user authentication.  A disconnected DeploymentManager
  * does not provide access to a running Jakarta EE product. The method
- * to retrieve a disconnected DeploymentManager is 
+ * to retrieve a disconnected DeploymentManager is
  * getDisconnectedDeploymentManager.  A disconnected DeploymentManager
  * does not need user authentication information.
  */
 public final class DeploymentFactoryManager {
-    
+
     private Vector deploymentFactories = null;
-    
+
     // Singleton instance
     private static DeploymentFactoryManager deploymentFactoryManager = new DeploymentFactoryManager();
-    
+
     /** Creates new RIDeploymentFactoryManager */
     private DeploymentFactoryManager() {
         deploymentFactories = new Vector();
@@ -72,25 +72,25 @@ public final class DeploymentFactoryManager {
     public static DeploymentFactoryManager getInstance() {
         return deploymentFactoryManager;
     }
-       
+
     /**
      * Retrieve the lists of currently registered DeploymentFactories.
      *
-     * @return the list of DeploymentFactory objects or an empty array 
+     * @return the list of DeploymentFactory objects or an empty array
      * 		if there are none.
      */
     public DeploymentFactory[] getDeploymentFactories() {
         Vector deploymentFactoriesSnapShot = null;
         synchronized(this){
-            deploymentFactoriesSnapShot = 
+            deploymentFactoriesSnapShot =
 				(Vector)this.deploymentFactories.clone();
         }
-        DeploymentFactory[] factoriesArray = 
+        DeploymentFactory[] factoriesArray =
 			new DeploymentFactory[deploymentFactoriesSnapShot.size()];
         deploymentFactoriesSnapShot.copyInto(factoriesArray);
         return factoriesArray;
     }
-    
+
     /**
      * Retrieves a DeploymentManager instance to use for deployment.
      * The caller provides a URI and optional username and password,
@@ -100,9 +100,9 @@ public final class DeploymentFactoryManager {
      * instance.
      *
      * @param uri The uri to check
-     * @param username An optional username (may be <tt>null</tt> if
+     * @param username An optional username (may be null if
      *        no authentication is required for this platform).
-     * @param password An optional password (may be <tt>null</yy> if
+     * @param password An optional password (may be null if
      *        no authentication is required for this platform).
      * @return A ready DeploymentManager instance.
      * @throws DeploymentManagerCreationException
@@ -114,7 +114,7 @@ public final class DeploymentFactoryManager {
 		 String password) throws DeploymentManagerCreationException{
         try{
             DeploymentFactory[] factories = this.getDeploymentFactories();
-            for(int factoryIndex=0; factoryIndex < factories.length; 
+            for(int factoryIndex=0; factoryIndex < factories.length;
 				factoryIndex++){
                 if(factories[factoryIndex].handlesURI(uri)){
                     return factories[factoryIndex].getDeploymentManager(uri,
@@ -129,29 +129,31 @@ public final class DeploymentFactoryManager {
 				"Could not get DeploymentManager");
         }
     }
-    
+
     /**
      * Registers a DeploymentFactory so it will be able to handle
      * requests.
+     *
+     * @param factory the deployment factory
      */
     public void registerDeploymentFactory(DeploymentFactory factory){
         this.deploymentFactories.add(factory);
     }
-    
+
     /**
-     * Return a <tt>disconnected</tt> DeploymentManager instance.
+     * Return a disconnected DeploymentManager instance.
      *
      * @param uri identifier of the disconnected DeploymentManager to
      *             return.
      * @return A DeploymentManager instance.
-     * @throws DeploymentDriverException  occurs if the DeploymentManager
+     * @throws DeploymentManagerCreationException  occurs if the DeploymentManager
      *         could not be created.
      */
-    public DeploymentManager getDisconnectedDeploymentManager(String uri) 
+    public DeploymentManager getDisconnectedDeploymentManager(String uri)
                throws DeploymentManagerCreationException {
         try{
             DeploymentFactory[] factories = this.getDeploymentFactories();
-            for(int factoryIndex=0; factoryIndex < factories.length; 
+            for(int factoryIndex=0; factoryIndex < factories.length;
 				factoryIndex++){
                 if(factories[factoryIndex].handlesURI(uri)){
                     return factories[factoryIndex].getDisconnectedDeploymentManager(uri);

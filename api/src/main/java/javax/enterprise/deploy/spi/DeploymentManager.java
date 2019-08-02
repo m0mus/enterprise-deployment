@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v. 2.0, which is available at
@@ -35,7 +35,7 @@ import java.lang.Deprecated;
  * and vendor unique runtime configuration information.
  */
 public interface DeploymentManager {
-    
+
     /**
      * Retrieve the list of deployment targets supported by
      * this DeploymentManager.
@@ -47,8 +47,8 @@ public interface DeploymentManager {
      *           if there are none.
      */
     public Target[] getTargets() throws IllegalStateException;
-    
-    
+
+
     /**
      * Retrieve the list of Jakarta EE application modules distributed
      * to the identified targets and that are currently running
@@ -73,7 +73,7 @@ public interface DeploymentManager {
     public TargetModuleID[] getRunningModules(ModuleType moduleType,
             Target[] targetList) throws TargetException,
             IllegalStateException;
-    
+
     /**
      * Retrieve the list of Jakarta EE application modules distributed
      * to the identified targets and that are currently not
@@ -98,7 +98,7 @@ public interface DeploymentManager {
     public TargetModuleID[] getNonRunningModules(ModuleType moduleType,
             Target[] targetList) throws TargetException,
             IllegalStateException;
-    
+
     /**
      * Retrieve the list of all Jakarta EE application modules running
      * or not running on the identified targets.
@@ -122,21 +122,22 @@ public interface DeploymentManager {
     public TargetModuleID[] getAvailableModules(ModuleType moduleType,
             Target[] targetList) throws TargetException,
             IllegalStateException;
-    
+
     /**
      * Retrieve the object that provides server-specific deployment
      * configuration information for the Jakarta EE deployable component.
      *
      * @param dObj An object representing a Jakarta EE deployable component.
+     * @return the deployment configuration
      * @throws InvalidModuleException The DeployableObject is an
      *                      unknown or unsupport component for this
      *                      configuration tool.
      */
-    
+
     public DeploymentConfiguration createConfiguration(DeployableObject dObj)
     throws InvalidModuleException;
-    
-    
+
+
     /**
      * The distribute method performs three tasks; it validates the
      * deployment configuration data, generates all container specific
@@ -155,11 +156,11 @@ public interface DeploymentManager {
      * @return ProgressObject an object that tracks and reports the
      *                       status of the distribution process.
      */
-    
+
     public ProgressObject distribute(Target[] targetList,
             File moduleArchive, File deploymentPlan)
             throws IllegalStateException;
-    
+
     /**
      * The distribute method performs three tasks; it validates the
      * deployment configuration data, generates all container specific
@@ -179,11 +180,11 @@ public interface DeploymentManager {
      *                       status of the distribution process.
      * @deprecated as of Java EE 5, replaced with {@link #distribute(Target[], ModuleType, InputStream, InputStream)}
      */
-    
+
     public ProgressObject distribute(Target[] targetList,
             InputStream moduleArchive, InputStream deploymentPlan)
             throws IllegalStateException;
-    
+
     /**
      * The distribute method performs three tasks; it validates the
      * deployment configuration data, generates all container specific
@@ -204,11 +205,11 @@ public interface DeploymentManager {
      *                       status of the distribution process.
      *
      */
-    
+
     public ProgressObject distribute(Target[] targetList, ModuleType type,
             InputStream moduleArchive, InputStream deploymentPlan)
-            throws IllegalStateException;    
-    
+            throws IllegalStateException;
+
     /**
      * Start the application running.
      *
@@ -225,10 +226,10 @@ public interface DeploymentManager {
      * @return ProgressObject an object that tracks and reports the
      *                       status of the start operation.
      */
-    
+
     public ProgressObject start(TargetModuleID[] moduleIDList)
     throws IllegalStateException;
-    
+
     /**
      * Stop the application running.
      *
@@ -245,10 +246,10 @@ public interface DeploymentManager {
      * @return ProgressObject an object that tracks and reports the
      *                       status of the stop operation.
      */
-    
+
     public ProgressObject stop(TargetModuleID [] moduleIDList)
     throws IllegalStateException;
-    
+
     /**
      * Remove the application from the target server.
      *
@@ -266,10 +267,10 @@ public interface DeploymentManager {
      * @return ProgressObject an object that tracks and reports the
      *                       status of the stop operation.
      */
-    
+
     public ProgressObject undeploy(TargetModuleID[] moduleIDList)
     throws IllegalStateException;
-    
+
     /**
      * This method designates whether this platform vendor provides
      * application redeployment functionality. A value of true means
@@ -280,7 +281,7 @@ public interface DeploymentManager {
      *                   is not.
      */
     public boolean isRedeploySupported();
-    
+
     /**
      * (optional)
      * The redeploy method provides a means for updating currently
@@ -316,12 +317,12 @@ public interface DeploymentManager {
      * @throws java.lang.UnsupportedOperationException this optional command
      *         is not supported by this implementation.
      */
-    
+
     public ProgressObject redeploy(TargetModuleID[] moduleIDList,
             File moduleArchive, File deploymentPlan)
             throws java.lang.UnsupportedOperationException,
             IllegalStateException;
-    
+
     /**
      * (optional)
      * The redeploy method provides a means for updating currently
@@ -358,14 +359,14 @@ public interface DeploymentManager {
      * @throws java.lang.UnsupportedOperationException this optional command
      *         is not supported by this implementation.
      */
-    
+
     public ProgressObject redeploy(TargetModuleID[] moduleIDList,
             InputStream moduleArchive, InputStream deploymentPlan)
             throws java.lang.UnsupportedOperationException,
             IllegalStateException;
-    
-    
-    
+
+
+
     /**
      * The release method is the mechanism by which the tool signals
      * to the DeploymentManager that the tool does not need it to
@@ -384,9 +385,9 @@ public interface DeploymentManager {
      * the ProgressObject).
      *
      */
-    
+
     public void release();
-    
+
     /**
      * Returns the default locale supported by this implementation of
      * javax.enterprise.deploy.spi subpackages.
@@ -394,7 +395,7 @@ public interface DeploymentManager {
      * @return Locale the default locale for this implementation.
      */
     public Locale getDefaultLocale();
-    
+
     /**
      * Returns the active locale this implementation of
      * javax.enterprise.deploy.spi subpackages is running.
@@ -402,32 +403,34 @@ public interface DeploymentManager {
      * @return Locale the active locale of this implementation.
      */
     public Locale getCurrentLocale();
-    
+
     /**
      * Set the active locale for this implementation of
      * javax.enterprise.deploy.spi subpackages to run.
      *
+     * @param locale the locale to set
      * @throws java.lang.UnsupportedOperationException the provide locale is
      *      not supported.
      */
     public void setLocale(Locale locale)
         throws java.lang.UnsupportedOperationException;
-    
+
     /**
      * Returns an array of supported locales for this implementation.
      *
      * @return Locale[] the list of supported locales.
      */
     public Locale[] getSupportedLocales();
-    
+
     /**
      * Reports if this implementation supports the designated locale.
      *
+     * @param locale the locale to check
      * @return  A value of 'true' means it is support and 'false' it is
      *      not.
      */
     public boolean isLocaleSupported(Locale locale);
-    
+
     /**
      * Returns the Jakarta EE platform version number for which the
      * configuration beans are provided.  The beans must have
@@ -438,7 +441,7 @@ public interface DeploymentManager {
      * platform version number for which these beans are provided.
      */
     public DConfigBeanVersionType getDConfigBeanVersion();
-    
+
     /**
      * Returns 'true' if the configuration beans support the Jakarta EE platform
      * version specified.  It returns 'false' if the version is
@@ -449,7 +452,7 @@ public interface DeploymentManager {
      * @return 'true' if the version is supported and 'false if not.
      */
     public boolean isDConfigBeanVersionSupported(DConfigBeanVersionType version);
-    
+
     /**
      * Set the configuration beans to be used to the Jakarta EE platform
      * version specificed.
